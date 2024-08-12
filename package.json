@@ -1,0 +1,56 @@
+{
+  "name": "push-server",
+  "version": "0.1.0",
+  "main": "index.js",
+  "private": true,
+  "author": "AliSir <2238214903@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alisir-828/push-server"
+  },
+  "scripts": {
+    "dev": "tsrpc-cli dev",
+    "build": "tsrpc-cli build",
+    "doc": "tsrpc-cli doc",
+    "test": "mocha test/**/*.test.ts",
+    "proto": "tsrpc-cli proto",
+    "sync": "tsrpc-cli sync",
+    "api": "tsrpc-cli api",
+    "lint": "eslint 'src/**/*.{js,ts}'",
+    "format": "prettier --write --config .prettierrc \"src/**/*.{js,ts,json}\""
+  },
+  "devDependencies": {
+    "@types/mocha": "^8.2.3",
+    "@types/node": "^15.14.9",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.8",
+    "mocha": "^9.2.2",
+    "onchange": "^7.1.0",
+    "prettier": "^3.3.3",
+    "ts-node": "^10.9.2",
+    "tsrpc-cli": "^2.4.5",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "format": "^0.2.2",
+    "redis": "^4.7.0",
+    "tsrpc": "^3.4.16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  }
+}

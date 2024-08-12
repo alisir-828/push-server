@@ -1,0 +1,85 @@
+{
+    "env": {
+        "es6": true,
+        "node": true,
+        "mocha": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 2020
+    },
+    // 全局变量
+    "globals": {},
+    "rules": {
+        "linebreak-style": ["off", "windows"],
+        "semi": ["error", "always"],
+        "no-console": "error",
+        "no-undef": "error",
+        "no-unused-vars": [
+            "error",
+            {
+                "vars": "local",
+                "args": "after-used",
+                "ignoreRestSiblings": true,
+                "destructuredArrayIgnorePattern": "^_",
+                "caughtErrors": "none"
+            }
+        ],
+        "no-var": "error",
+        "no-const-assign": "error",
+        "no-trailing-spaces": "error",
+        "spaced-comment": "error",
+        "multiline-ternary": ["error", "always-multiline"],
+        "max-len": [
+            "error",
+            {
+                "code": 160
+            }
+        ],
+        "no-bitwise": "off",
+        "no-magic-numbers": [
+            "error",
+            {
+                "ignore": [0, 1, -1, 200, 400, 401, 403, 404, 411, 500],
+                "ignoreArrayIndexes": true,
+                "enforceConst": true,
+                "detectObjects": false
+            }
+        ],
+        "one-var-declaration-per-line": "error",
+        "no-empty": "off",
+        "no-empty-function": "off",
+        "block-spacing": ["error", "always"],
+        "space-before-function-paren": "off",
+        "array-bracket-spacing": "off",
+        "no-constant-condition": [
+            "error",
+            {
+                "checkLoops": false
+            }
+        ],
+        "jsdoc/require-param-description": "off",
+        "jsdoc/require-param-type": "off"
+    },
+    "overrides": [
+        {
+            "files": ["test/**/*.ts"],
+            "rules": {
+                "no-magic-numbers": "off",
+                "strict": "off",
+                "one-var-declaration-per-line": "off"
+            }
+        },
+        {
+            "files": ["src/common/const/*.ts"],
+            "rules": {
+                "no-magic-numbers": "off",
+                "no-unused-vars": "off"
+            }
+        }
+    ]
+}
