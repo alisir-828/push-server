@@ -1,4 +1,5 @@
 import { ServiceProto } from 'tsrpc-proto';
+import { MsgAction } from './group/MsgAction';
 import { MsgChat } from './MsgChat';
 import { ReqSend, ResSend } from './PtlSend';
 import { ReqLogin, ResLogin } from './user/PtlLogin';
@@ -15,13 +16,19 @@ export interface ServiceType {
         };
     };
     msg: {
+        'group/Action': MsgAction;
         Chat: MsgChat;
     };
 }
 
 export const serviceProto: ServiceProto<ServiceType> = {
-    version: 2,
+    version: 3,
     services: [
+        {
+            id: 3,
+            name: 'group/Action',
+            type: 'msg',
+        },
         {
             id: 0,
             name: 'Chat',
@@ -42,6 +49,52 @@ export const serviceProto: ServiceProto<ServiceType> = {
         },
     ],
     types: {
+        'group/MsgAction/MsgAction': {
+            type: 'Interface',
+            properties: [
+                {
+                    id: 0,
+                    name: 'content',
+                    type: {
+                        type: 'Reference',
+                        target: 'group/MsgAction/Content',
+                    },
+                },
+                {
+                    id: 1,
+                    name: 'time',
+                    type: {
+                        type: 'Date',
+                    },
+                },
+            ],
+        },
+        'group/MsgAction/Content': {
+            type: 'Interface',
+            properties: [
+                {
+                    id: 0,
+                    name: 'groupId',
+                    type: {
+                        type: 'Number',
+                    },
+                },
+                {
+                    id: 1,
+                    name: 'roleId',
+                    type: {
+                        type: 'String',
+                    },
+                },
+                {
+                    id: 2,
+                    name: 'action',
+                    type: {
+                        type: 'String',
+                    },
+                },
+            ],
+        },
         'MsgChat/MsgChat': {
             type: 'Interface',
             properties: [
