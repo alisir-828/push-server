@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "format": "^0.2.2",
+    "node-kcp-x": "^1.2.1",
     "redis": "^4.7.0",
     "tsrpc": "^3.4.16"
   },
