@@ -1535,6 +1535,24 @@ natural-compare@^1.4.0:
   resolved "https://registry.npmmirror.com/natural-compare/-/natural-compare-1.4.0.tgz"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
+node-addon-api@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.npmmirror.com/node-addon-api/-/node-addon-api-6.1.0.tgz"
+  integrity sha512-+eawOlIgy680F0kBzPUNFhMZGtJ1YmqM6l4+Crf4IkImjYrO/mqPwRMh352g23uIaQKFItcQ64I7KMaJxHgAVA==
+
+node-gyp-build@^4.8.0:
+  version "4.8.1"
+  resolved "https://registry.npmmirror.com/node-gyp-build/-/node-gyp-build-4.8.1.tgz"
+  integrity sha512-OSs33Z9yWr148JZcbZd5WiAXhh/n9z8TxQcdMhIOlpN9AhWpLfvVFO73+m77bBABQMaY9XSvIa+qk0jlI7Gcaw==
+
+node-kcp-x@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.npmmirror.com/node-kcp-x/-/node-kcp-x-1.2.1.tgz"
+  integrity sha512-enehzIj/isyyRUCWazEXFD8ei8u6FzDmatgQoNDtGVBpieNJ8/D+dCvB9iWzaREGDVEWajOXdiXLY5TqTo3+iw==
+  dependencies:
+    node-addon-api "^6.1.0"
+    node-gyp-build "^4.8.0"
+
 normalize-path@^3.0.0, normalize-path@~3.0.0:
   version "3.0.0"
   resolved "https://registry.npmmirror.com/normalize-path/-/normalize-path-3.0.0.tgz"
